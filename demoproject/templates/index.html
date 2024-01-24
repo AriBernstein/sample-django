@@ -1,0 +1,15 @@
+{% load static %}
+
+<link href="{% static 'style.css' %}" rel="stylesheet" />
+
+<h1>Hello, world - What is up?!?!</h1>
+
+<p>This is a demo Django app.</p>
+
+<h3>This comes from an html file</h3>
+
+<form action="name" method="POST">
+    {% csrf_token %}
+    <input type="text" name="given_name" placeholder="Enter your name" />
+    <input type="submit" value="Submit" />
+</form>

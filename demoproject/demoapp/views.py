@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
 def index(request):
-    return HttpResponse('<h1>Hello, world!</h1>\n<p>This is a demo Django app.</p>')
+    return render(request, 'index.html')
+
+def name(request):
+    name = request.POST['given_name']
+    return render(request, 'name.html', {'given_name': name})
