@@ -1,9 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 def index(request):
-    return render(request, 'index.html')
+    
+    products = Product.objects.all()
+
+    return render(request, 'index.html', {'products': products})
 
 def name(request):
     name = request.POST['given_name']
     return render(request, 'name.html', {'given_name': name})
+

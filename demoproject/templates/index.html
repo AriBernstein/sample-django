@@ -13,3 +13,11 @@
     <input type="text" name="given_name" placeholder="Enter your name" />
     <input type="submit" value="Submit" />
 </form>
+
+{% for product in products %}
+<p>Name: <b>{{ product.name }}</b></p>
+<ul>
+    <li>Price: {{ product.price }}</li>
+    <li>Description: {{ product.description }}</li>
+</ul>
+{% endfor %}
